@@ -1,9 +1,11 @@
 "
 " Plugins (vim-plug)
 "
-call plug#begin(stdpath('data') . '/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'sheerun/vim-polyglot'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 Plug 'itchyny/lightline.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 
@@ -13,6 +15,8 @@ call plug#end()
 "
 " Editing experience
 "
+set encoding=UTF-8
+
 " Display current cursor position on status line.
 set ruler
 
@@ -21,6 +25,9 @@ set nowrap
 
 " Highlight current lie
 set cursorline
+
+" Enable hybrid line numbers
+set number relativenumber
 
 "
 " Theming
@@ -42,7 +49,14 @@ if (has("termguicolors"))
 endif
 
 "
+" NERDTree
+"
+" Autostart NERDtree
+autocmd vimenter * NERDTree
+" Close vim if NERDtree is the only buffer left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"
 " Neovide
 "
 let g:neovide_refresh_rate=144
-
