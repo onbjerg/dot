@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# nvim
+mkdir -p ~/.config/nvim
+ln -sv ./nvim/init.vm $HOME/.config/nvim
