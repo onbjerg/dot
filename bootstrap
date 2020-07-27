@@ -2,4 +2,4 @@
 
 # nvim
 mkdir -p ~/.config/nvim
-ln -sv ./nvim/init.vm $HOME/.config/nvim
+ln -sv ./nvim/init.vim $HOME/.config/nvim
