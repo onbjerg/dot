@@ -4,7 +4,8 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'sheerun/vim-polyglot'
-Plug 'ryanoasis/vim-devicons'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'drewtempelmeyer/palenight.vim'
