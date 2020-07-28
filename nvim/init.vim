@@ -4,9 +4,9 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'sheerun/vim-polyglot'
-Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'itchyny/lightline.vim'
+Plug 'mhinz/vim-startify'
 Plug 'drewtempelmeyer/palenight.vim'
 
 " Initialize plugin system
@@ -29,6 +29,19 @@ set cursorline
 " Enable hybrid line numbers
 set number relativenumber
 
+" File type recognition
+filetype on
+filetype plugin on
+filetype indent on
+
+" Whitespace
+set expandtab
+set tabstop=2 shiftwidth=2 softtabstop=2
+set wrap
+set backspace=indent,eol,start
+set autoindent
+set smartindent
+
 "
 " Theming
 "
@@ -47,14 +60,6 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
-
-"
-" NERDTree
-"
-" Autostart NERDtree
-autocmd vimenter * NERDTree
-" Close vim if NERDtree is the only buffer left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "
 " Neovide
