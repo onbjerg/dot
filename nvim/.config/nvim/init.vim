@@ -66,3 +66,12 @@ endif
 " Neovide
 "
 let g:neovide_refresh_rate=144
+
+"
+" FZF
+"
+" Use silver searcher and ignore VCS files
+let $FZF_DEFAULT_COMMAND='ag -g ""'
+" Spawn FZF in new window
+let g:fzf_layout = { 'window': 'enew' }
+
