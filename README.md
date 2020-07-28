@@ -15,3 +15,4 @@ The bootstrap script assumes you have `stow` available on your system and that t
 #### neovim
 
 - Syntax highlighting in the `fzf` preview window requires [`bat`](https://github.com/sharkdp/bat)
+- Requires [`ag`](https://github.com/ggreer/the_silver_searcher)
