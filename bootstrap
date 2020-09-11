@@ -5,3 +5,5 @@ stow polybar
 stow alacritty
 stow fish
 stow rofi
+stow fontconfig
+
