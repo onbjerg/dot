@@ -9,6 +9,7 @@ The bootstrap script assumes you have `stow` available on your system and that t
 ### Configs
 
 - [neovim](./nvim/.config/nvim)
+- [alacritty](./alacritty/.config/alacritty)
 
 ### Notes
 
