@@ -1,4 +1,5 @@
 #!/bin/bash
 stow nvim
 stow i3
+stow polybar
 stow alacritty

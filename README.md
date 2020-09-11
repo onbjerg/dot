@@ -10,6 +10,7 @@ The bootstrap script assumes you have `stow` available on your system and that t
 
 - [neovim](./nvim/.config/nvim)
 - [i3](./i3/.config/i3)
+- [polybar](./polybar/.config/polybar)
 - [alacritty](./alacritty/.config/alacritty)
 
 ### Notes
