@@ -20,3 +20,15 @@ The bootstrap script assumes you have `stow` available on your system and that t
 
 - Syntax highlighting in the `fzf` preview window requires [`bat`](https://github.com/sharkdp/bat)
 - Requires [`ag`](https://github.com/ggreer/the_silver_searcher)
+
+#### fish
+
+- Optionally requires [`neofetch`](https://github.com/dylanaraps/neofetch)
+
+#### i3
+
+- Requires [`polybar`](https://github.com/polybar/polybar) and [`feh`](https://github.com/derf/feh)
+
+#### polybar
+
+- Optionally requires [`playerctl`](https://github.com/altdesktop/playerctl) for Now Playing module
