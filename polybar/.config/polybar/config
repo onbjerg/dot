@@ -45,7 +45,7 @@ border-color = 0
 ;---------------;
 
 modules-left = workspaces spotify
-modules-right = updates volume time powermenu
+modules-right = updates tor volume time powermenu
 
 ;---------------;
 ; MISCELLANEOUS ;
@@ -115,6 +115,7 @@ type = custom/script
 tail = true
 format =  <label>
 exec = ~/.config/polybar/get_spotify_status.sh
+exec-if = playerctl --player=spotify status
 interval = 0.5
 
 [module/cpu]
@@ -138,6 +139,14 @@ click-left = alacritty -e pamac update
 type = internal/network
 interface = enp5s0
 label-connected =  %downspeed% |  %upspeed%
+
+[module/tor]
+type = custom/script
+exec = echo
+exec-if = pgrep -x tor
+interval = 5
+format-underline = #ccffcc
+format-prefix = ""
 
 [module/powermenu]
 type = custom/menu
