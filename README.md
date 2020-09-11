@@ -11,6 +11,7 @@ The bootstrap script assumes you have `stow` available on your system and that t
 - [neovim](./nvim/.config/nvim)
 - [i3](./i3/.config/i3)
 - [polybar](./polybar/.config/polybar)
+- [rofi](./rofi/.config/rofi)
 - [fish](./fish/.config/fish)
 - [alacritty](./alacritty/.config/alacritty)
 
@@ -28,6 +29,7 @@ The bootstrap script assumes you have `stow` available on your system and that t
 #### i3
 
 - Requires [`polybar`](https://github.com/polybar/polybar) and [`feh`](https://github.com/derf/feh)
+- Requires [`rofi`](https://github.com/davatorium/rofi)
 
 #### polybar
 
