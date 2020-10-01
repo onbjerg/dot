@@ -15,6 +15,7 @@ The bootstrap script assumes you have `stow` available on your system and that t
 - [fish](./fish/.config/fish)
 - [alacritty](./alacritty/.config/alacritty)
 - [fontconfig](./fontconfig/.config/fontconfig)
+- [dunst](./dunst/.config/dunst)
 
 ### Notes
 
