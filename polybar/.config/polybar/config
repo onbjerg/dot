@@ -45,7 +45,7 @@ border-color = 0
 ;---------------;
 
 modules-left = workspaces spotify
-modules-right = updates tor volume time powermenu
+modules-right = updates tor github volume time powermenu
 
 ;---------------;
 ; MISCELLANEOUS ;
@@ -118,6 +118,13 @@ exec = ~/.config/polybar/get_spotify_status.sh
 exec-if = playerctl --player=spotify status
 interval = 0.5
 
+[module/github]
+type = custom/script
+tail = true
+format =  <label>
+exec = ~/.config/polybar/get_github_notifs.sh
+interval = 10
+
 [module/cpu]
 type = internal/cpu
 label =  %percentage%%
@@ -142,8 +149,8 @@ label-connected =  %downspeed% |  %upspeed%
 
 [module/tor]
 type = custom/script
-exec = echo
-exec-if = pgrep -x tor
+exec = echo " Tor"
+exec-if = systemctl is-active tor
 interval = 5
 format-underline = #ccffcc
 format-prefix = ""

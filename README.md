@@ -35,3 +35,4 @@ The bootstrap script assumes you have `stow` available on your system and that t
 #### polybar
 
 - Optionally requires [`playerctl`](https://github.com/altdesktop/playerctl) for Now Playing module
+- Optionally requires [`gh`](https://github.com/cli/cli) and `jq` for Github module
