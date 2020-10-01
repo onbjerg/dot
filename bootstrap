@@ -1,6 +1,6 @@
 #!/bin/bash
-options=(nvim i3 polybar alacritty fish rofi fontconfig)
-choices=("+" "+" "+" "+" "+" "+" "+")
+options=(nvim i3 polybar alacritty fish rofi fontconfig dunst)
+choices=("+" "+" "+" "+" "+" "+" "+" "+")
 
 menu() {
     echo "Avaliable configs:"

@@ -98,6 +98,7 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+bindsym $mod+shift+f fullscreen toggle global
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -194,3 +195,7 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id feh --bg-fill $HOME/Pictures/Wallpapers/current.jpg
 exec --no-startup-id picom &
+
+# Notification daemon
+exec killall -q gsd-print-notifications
+exec --no-startup-id dunst

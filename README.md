@@ -31,6 +31,7 @@ The bootstrap script assumes you have `stow` available on your system and that t
 
 - Requires [`polybar`](https://github.com/polybar/polybar) and [`feh`](https://github.com/derf/feh)
 - Requires [`rofi`](https://github.com/davatorium/rofi)
+- Requires [`dunst`](https://github.com/dunst-project/dunst) for notifications
 
 #### polybar
 
