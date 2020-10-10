@@ -139,7 +139,7 @@ exec = pamac checkupdates -aq | wc -l
 exec-if = [[ $(pamac checkupdates -aq | wc -l ) != 0 ]]
 format =  <label> update(s) available.
 tail = true
-interval = 10
+interval = 1000
 click-left = alacritty -e pamac update
 
 [module/network]
