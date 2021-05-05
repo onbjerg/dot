@@ -1,8 +1,8 @@
 [global]
 font = "DejaVu Sans"
 markup = yes
-format = "<b>%a</b>\n%s\n%b"
-max_icon_size = 64
+format = "<b>%s</b>\n%b"
+max_icon_size = 48
 icon_position = left
 #sort = yes
 indicate_hidden = yes
@@ -19,7 +19,7 @@ follow = mouse
 sticky_history = yes
 history_length = 20
 line_height = 0
-padding = 20
+padding = 16
 horizontal_padding = 10
 frame_width = 2
 frame_color = "#0101df"
@@ -28,6 +28,9 @@ separator_height = 5
 separator_color = foreground
 #separator_color = frame
 startup_notification = false
+show_age_threshold = -1
+corner_radius = 5
+frame_width = 0
 
 # dmenu(-compatible) command that will be run when opening the context menu
 dmenu = /usr/local/bin/dmenu -p dunst:
@@ -45,17 +48,17 @@ history = ctrl+shift+n
 [urgency_low]
 background = "#141c21"
 foreground = "#93a1a1"
-frame_color = "#ffcc00"
+frame_color = "#141c21"
 timeout = 5
 
 [urgency_normal]
 background = "#141c21"
 foreground = "#93a1a1"
-frame_color = "#04b404"
+frame_color = "#141c21"
 timeout = 10
 
 [urgency_critical]
 background = "#141c21"
 foreground = "#93a1a1"
-frame_color = "#df013a"
-timeout = 0
+frame_color = "#141c21"
+timeout = 10
