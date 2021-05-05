@@ -1,4 +1,5 @@
 * {
+  font-family: "DejaVu Sans";
   background-color: #282C33;
   border-color: #2e343f;
   text-color: #8ca0aa;
