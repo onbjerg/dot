@@ -1,0 +1,24 @@
+[submodule "nvim/.config/nvim/pack/syntax/start/vim-polyglot"]
+	path = nvim/.config/nvim/pack/syntax/start/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot
+[submodule "nvim/.config/nvim/pack/syntax/start/coc.nvim"]
+	path = nvim/.config/nvim/pack/syntax/start/coc.nvim
+	url = git@github.com:neoclide/coc.nvim
+[submodule "nvim/.config/nvim/pack/ui/start/fzf"]
+	path = nvim/.config/nvim/pack/ui/start/fzf
+	url = git@github.com:junegunn/fzf
+[submodule "nvim/.config/nvim/pack/ui/start/fzf.vim"]
+	path = nvim/.config/nvim/pack/ui/start/fzf.vim
+	url = git@github.com:junegunn/fzf.vim
+[submodule "nvim/.config/nvim/pack/ui/start/lightline.vim"]
+	path = nvim/.config/nvim/pack/ui/start/lightline.vim
+	url = git@github.com:itchyny/lightline.vim
+[submodule "nvim/.config/nvim/pack/color/start/gruvbox"]
+	path = nvim/.config/nvim/pack/color/start/gruvbox
+	url = git@github.com:morhetz/gruvbox
+[submodule "nvim/.config/nvim/pack/color/opt/gruvbox"]
+	path = nvim/.config/nvim/pack/color/opt/gruvbox
+	url = git@github.com:morhetz/gruvbox
+[submodule "nvim/.config/nvim/pack/ui/start/--force"]
+	path = nvim/.config/nvim/pack/ui/start/--force
+	url = git@github.com:junegunn/fzf.vim

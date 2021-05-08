@@ -1,17 +1,5 @@
-"
-" Plugins (vim-plug)
-"
-call plug#begin('~/.config/nvim/plugged')
-
-Plug 'sheerun/vim-polyglot'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'morhetz/gruvbox'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Initialize plugin system
-call plug#end()
+packadd! gruvbox
+packadd! termdebug 
 
 "
 " Editing experience
