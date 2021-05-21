@@ -1,18 +1,17 @@
 [settings]
 screenchange-reload = true
 
-[bar/primary]
+[bar/base]
 
-monitor = ${env:MONITOR:DP-0}
+monitor = ${env:MONITOR:DP-2}
 
 ;------------;
 ; DIMENSIONS ;
 ;------------;
 
-width = 100%
-height = 30
-offset-y = 0
-offset-x = 0
+height = 40
+offset-y = 10
+offset-x = 10 
 
 line-size = 2
 
@@ -20,76 +19,67 @@ line-size = 2
 ; LOCATION ;
 ;----------;
 
-bottom = false
-override-redirect = false
+bottom = true
+override-redirect = false 
 
 ;-------;
 ; FONTS ;
 ;-------;
 
-font-0 = Hack:size=10;3
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=10;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=10;3"
-font-3 = "Font Awesome 5 Brands:pixelsize=10;3"
+# Hack
+font-0 = Hack:size=12;3
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
 ;--------;
 ; COLORS ;
 ;--------;
 
-background = #7d000000
+background = #ff000000
 foreground = #eeeeee
 border-color = 0
-
-;---------------;
-;  BAR MODULES  ;
-;---------------;
-
-modules-left = workspaces spotify
-modules-right = updates tor github volume time powermenu
 
 ;---------------;
 ; MISCELLANEOUS ;
 ;---------------;
 
-fixed-center = true
-padding-top = 5
-padding-bottom = 5
+padding-top = 7
+padding-bottom = 7
 padding-left = 2
 padding-right = 2
-module-margin = 1.5
+module-margin = 1
 enable-ipc = true
 
 tray-position = none
 tray-detached = true
 
-[bar/secondary]
-inherit = bar/primary
-
-modules-left = workspaces
-modules-right = cpu memory network
-
 ;---------;
 ; MODULES ;
 ;---------;
 
-[module/workspaces]
-type = internal/i3
+[bar/tray]
+inherit = bar/base
+modules-left = powermenu time volume 
+width = 235
+offset-x = 90
 
-pin-workspaces = true
-enable-click = true
-index-sort = true
-format = <label-state> <label-mode>
+[bar/spotify]
+inherit = bar/base
+modules-left = spotify
+width = 350
+offset-x = 335
 
-label-focused = %index%
-label-focused-underline = #ffffff
-label-focused-padding = 2
+[bar/workspace]
+inherit = bar/base
+modules-center = workspace
+width = 70
 
-label-unfocused = %index%
-label-unfocused-padding = 2
-
-label-urgent = !
-label-urgent-padding = 3
-label-urgent-underline = #ff6961
+[module/workspace]
+type = custom/script
+format = <label>
+tail = true
+exec = ~/.config/polybar/get_workspace.sh
 
 [module/time]
 type = internal/date
@@ -118,43 +108,6 @@ exec = ~/.config/polybar/get_spotify_status.sh
 exec-if = playerctl --player=spotify status
 interval = 0.5
 
-[module/github]
-type = custom/script
-tail = true
-format =  <label>
-exec = ~/.config/polybar/get_github_notifs.sh
-interval = 10
-
-[module/cpu]
-type = internal/cpu
-label =  %percentage%%
-
-[module/memory]
-type = internal/memory
-label =  %gb_used%
-
-[module/updates]
-type = custom/script
-exec = pamac checkupdates -aq | wc -l
-exec-if = [[ $(pamac checkupdates -aq | wc -l ) != 0 ]]
-format =  <label> update(s) available.
-tail = true
-interval = 1000
-click-left = alacritty -e pamac update
-
-[module/network]
-type = internal/network
-interface = enp5s0
-label-connected =  %downspeed% |  %upspeed%
-
-[module/tor]
-type = custom/script
-exec = echo " Tor"
-exec-if = systemctl is-active tor
-interval = 5
-format-underline = #ccffcc
-format-prefix = ""
-
 [module/powermenu]
 type = custom/menu
 
@@ -182,4 +135,4 @@ menu-2-0 =  Reboot
 menu-2-0-exec = reboot
 
 menu-3-0 =  Log out
-menu-3-0-exec = i3-msg exit
+menu-3-0-exec = bspc quit 
