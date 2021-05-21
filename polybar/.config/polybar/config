@@ -107,7 +107,6 @@ tail = true
 format =  <label>
 exec = ~/.config/polybar/get_spotify_status.sh
 exec-if = playerctl --player=spotify status
-interval = 0.5
 
 [module/powermenu]
 type = custom/menu
