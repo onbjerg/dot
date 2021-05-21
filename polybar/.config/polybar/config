@@ -4,6 +4,7 @@ screenchange-reload = true
 [bar/base]
 
 monitor = ${env:MONITOR:DP-2}
+wm-restack = bspwm
 
 ;------------;
 ; DIMENSIONS ;
