@@ -37,8 +37,8 @@ font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 ; COLORS ;
 ;--------;
 
-background = #ff000000
-foreground = #eeeeee
+background = ${xrdb:background:#ff000000}
+foreground = ${xrdb:foreground:#eeeeee}
 border-color = 0
 
 ;---------------;
