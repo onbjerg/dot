@@ -6,8 +6,9 @@ super + Return
 super + d
 	$HOME/.config/rofi/launchers/misc/launcher.sh
 
+# TODO(onbjerg): Other macOS-like screenshot keybindings
 # Take a screenshot
-super + shift + s
+super + shift + 4
 	scrot -se "mv $f ~/Pictures && xclip -selection clipboard -t image/png -i ~/Pictures/$n && notify-send 'Screenshot taken'"
 
 # Reload sxhkd config
