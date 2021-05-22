@@ -55,6 +55,14 @@ super + {t,shift + space,f}
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
+# Send current node to scratchpad
+super + shift + s
+	~/.config/bspwm/scratchpad.sh hide
+
+# Pull a node from the scratchpad
+super + s
+	~/.config/bspwm/scratchpad.sh show
+
 #
 # focus/swap
 #
