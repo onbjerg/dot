@@ -12,7 +12,7 @@ hide() {
 }
 
 show() {
-  hidden_window_ids=($(bspc query -N -n .hidden.local.window))
+  hidden_window_ids=($(bspc query -N -n .hidden.window))
   selected_id=""
   if [ "${#hidden_window_ids[@]}" -gt "1" ]; then
     opts="$(xtitle "${hidden_window_ids[@]}")"
@@ -22,7 +22,7 @@ show() {
     selected_id="0"
   fi
   if [ -n "${selected_id}" ]; then
-    bspc node "${hidden_window_ids[${selected_id}]}" -g hidden=off
+    bspc node "${hidden_window_ids[${selected_id}]}" -g hidden=off --to-monitor focused --focus
   fi
 }
 
