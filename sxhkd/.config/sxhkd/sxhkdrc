@@ -9,7 +9,7 @@ super + d
 # TODO(onbjerg): Other macOS-like screenshot keybindings
 # Take a screenshot
 super + shift + 4
-	scrot -se "mv $f ~/Pictures && xclip -selection clipboard -t image/png -i ~/Pictures/$n && notify-send 'Screenshot taken'"
+	scrot -s "$HOME/Pictures/Screenshot from %F %T.png" -e "xclip -selection c -t image/png < $f"; notify-send "Screenshot taken"
 
 # Reload sxhkd config
 super + Escape
