@@ -25,7 +25,7 @@ $HOME/.config/polybar/launch.sh &
 feh --bg-fill $HOME/Pictures/Wallpapers/current.jpg &
 
 # Compositor
-picom -b --unredir-if-possible &
+picom -b &
 
 # Notifications
 killall -q gsd-print-notifications
