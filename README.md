@@ -8,6 +8,7 @@ The bootstrap script assumes you have `stow` available on your system and that t
 
 ### Configs
 
+- [Xresources](./xresources)
 - [git](./git)
 - [neovim](./nvim/.config/nvim)
 - [bspwm](./i3/.config/i3)
