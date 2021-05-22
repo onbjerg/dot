@@ -68,7 +68,7 @@ offset-x = 90
 [bar/spotify]
 inherit = bar/base
 modules-left = spotify
-width = 350
+width = 500
 offset-x = 335
 
 [bar/workspace]
