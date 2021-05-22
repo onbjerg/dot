@@ -1,4 +1,4 @@
-packadd! gruvbox
+packadd! rigel
 packadd! termdebug 
 
 "
@@ -34,10 +34,8 @@ set smartindent
 "
 " Theming
 "
-set background=dark
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
-let g:lightline = { 'colorscheme': 'gruvbox' }
+colorscheme rigel
+let g:rigel_lightline = 1
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -63,6 +61,7 @@ let g:lightline = {
       \   'filename': 'LightlineFilename',
       \   'cocstatus': 'coc#status'
       \ },
+      \ 'colorscheme': 'rigel',
       \ }
 function! LightlineFilename()
 	return expand('%:t') !=# '' ? @% : '[No name]'

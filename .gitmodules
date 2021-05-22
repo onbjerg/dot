@@ -19,3 +19,6 @@
 [submodule "nvim/.config/nvim/pack/color/opt/gruvbox"]
 	path = nvim/.config/nvim/pack/color/opt/gruvbox
 	url = git@github.com:morhetz/gruvbox
+[submodule "nvim/.config/nvim/pack/color/opt/rigel"]
+	path = nvim/.config/nvim/pack/color/opt/rigel
+	url = git@github.com:rigellute/rigel
