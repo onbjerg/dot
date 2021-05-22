@@ -1,5 +1,7 @@
 # .
 
+![screenshot](./.github/scrot.png)
+
 Various dotfiles
 
 ### Usage
