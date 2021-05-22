@@ -1,6 +1,6 @@
 #!/bin/bash
-options=(nvim bspwm sxhkd polybar alacritty fish rofi fontconfig dunst)
-choices=("+" "+" "+" "+" "+" "+" "+" "+" "+")
+options=(git nvim bspwm sxhkd polybar alacritty fish rofi fontconfig dunst)
+choices=("+" "+" "+" "+" "+" "+" "+" "+" "+" "+")
 
 menu() {
     echo "Avaliable configs:"
