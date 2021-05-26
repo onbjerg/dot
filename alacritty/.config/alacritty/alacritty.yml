@@ -9,8 +9,8 @@ shell:
 window:
   dynamic_padding: true
   padding:
-    x: 5
-    y: 5
+    x: 0
+    y: 0
 # Color Schemes
 schemes:
   ayu_dark:
