@@ -4,7 +4,7 @@ super + Return
 
 # Launch a program
 super + d
-	$HOME/.config/rofi/launchers/misc/launcher.sh
+	$HOME/.config/rofi/launchers/text/launcher.sh
 
 # Take a screenshot of the entire screen
 super + shift + 3
