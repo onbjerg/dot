@@ -17,7 +17,7 @@ show() {
   if [ "${#hidden_window_ids[@]}" -gt "1" ]; then
     opts="$(xtitle "${hidden_window_ids[@]}")"
 
-    selected_id="$(<<< "$opts" rofi -dmenu -i -format i -markup-rows -no-show-icons -width 1000 -lines 15 -yoffset 40)"
+    selected_id="$(<<< "$opts" rofi -dmenu -i -format i -markup-rows -no-show-icons)"
   else
     selected_id="0"
   fi
