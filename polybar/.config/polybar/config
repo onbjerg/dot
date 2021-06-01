@@ -3,7 +3,7 @@ screenchange-reload = true
 
 [bar/base]
 
-monitor = ${env:MONITOR:DP-2}
+monitor = ${env:MONITOR}
 wm-restack = bspwm
 
 ;------------;
@@ -80,7 +80,7 @@ width = 70
 type = custom/script
 format = <label>
 tail = true
-exec = ~/.config/polybar/get_workspace.sh
+exec = ~/.config/polybar/get_workspace.sh $MONITOR
 
 [module/time]
 type = internal/date
