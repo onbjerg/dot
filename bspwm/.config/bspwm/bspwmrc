@@ -3,8 +3,16 @@
 # Hotkey daemon
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+# Configure physical displays
+xrandr --output DP-2 --right-of DP-0
+xrandr --output DP-2 --primary
+xrandr --output DP-0 --mode 2560x1440 --rate 144
+xrandr --output DP-2 --mode 2560x1440 --rate 144
+
 # Monitor setup
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor DP-2 -d I II III IV V
+bspc monitor DP-0 -d VI VII VIII IX X
+bspc monitor DP-0 -s DP-2
 
 # Gaps
 bspc config border_width         0
