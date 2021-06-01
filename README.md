@@ -24,6 +24,10 @@ The bootstrap script assumes you have `stow` available on your system and that t
 
 ### Notes
 
+#### git
+
+- Requires [`delta`](https://github.com/dandavison/delta)
+
 #### neovim
 
 - Syntax highlighting in the `fzf` preview window requires [`bat`](https://github.com/sharkdp/bat)
