@@ -12,6 +12,8 @@
 	default = current
 [core]
 	editor = nvim
+[commit]
+	verbose = true
 [pager]
 	diff = delta
 	log = delta
