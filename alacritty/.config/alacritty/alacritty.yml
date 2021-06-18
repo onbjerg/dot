@@ -1,3 +1,4 @@
+alt_send_esc: true
 font:
   normal:
     family: Fira Code
