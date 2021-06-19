@@ -19,7 +19,7 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # Show help
-super + h
+super + alt + slash
 	~/.config/sxhkd/help.sh
 
 #
