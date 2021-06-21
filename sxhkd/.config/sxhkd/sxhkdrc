@@ -6,12 +6,8 @@ super + Return
 super + d
 	$HOME/.config/rofi/launchers/text/launcher.sh
 
-# Take a screenshot of the entire screen
-super + shift + 3
-	scrot -f "$HOME/Pictures/Screenshot from %F %T.png" -e 'gthumb "$f"'; notify-send "Screenshot taken"
-
 # Take a screenshot of a region or window
-super + shift + 4
+super + shift + x
 	scrot -f -s -b "$HOME/Pictures/Screenshot from %F %T.png" -e 'gthumb "$f"'; notify-send "Screenshot taken"
 
 # Reload sxhkd config
