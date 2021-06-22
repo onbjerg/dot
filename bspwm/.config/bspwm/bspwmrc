@@ -35,7 +35,7 @@ $HOME/.config/polybar/launch.sh &
 feh --bg-fill $HOME/Pictures/Wallpapers/current.jpg &
 
 # Compositor
-picom -b &
+#picom -b --backend xr_glx_hybrid --vsync --glx-no-stencil --use-damage &
 
 # Notifications
 killall -q gsd-print-notifications
