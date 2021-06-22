@@ -7,11 +7,13 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch bars
-MONITOR=DP-2 polybar -rq tray &
-MONITOR=DP-2 polybar -rq workspace &
-MONITOR=DP-0 polybar -rq workspace &
+PRIMARY=DP-1
+SECONDARY=DP-2
+MONITOR=$PRIMARY polybar -rq tray &
+MONITOR=$PRIMARY polybar -rq workspace &
+MONITOR=$SECONDARY polybar -rq workspace &
 
 # Launch Spotify bar and supporting script
-MONITOR=DP-2 polybar -rq spotify &
+MONITOR=$PRIMARY polybar -rq spotify &
 ln -sf /tmp/polybar_mqueue.$! /tmp/ipc-spotify-bar
 $HOME/.config/polybar/spotify_toggle_bar.sh &
