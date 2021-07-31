@@ -12,6 +12,9 @@ function ws
 		case bjerger
 			set hub bjerger
 			set hub_host git.bjerger.xyz
+		case aur
+			set hub aur
+			set hub_host aur.archlinux.org
 		case '*'
 			set hub github
 			set hub_host github.com
