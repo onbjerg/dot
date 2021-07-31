@@ -67,6 +67,9 @@ function! LightlineFilename()
 	return expand('%:t') !=# '' ? @% : '[No name]'
 endfunction
 
+" Polyglot config
+let g:rustfmt_autosave = 1
+
 " Use autocmd to force lightline update on COC changes
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
