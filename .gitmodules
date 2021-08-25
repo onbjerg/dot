@@ -22,3 +22,6 @@
 [submodule "nvim/.config/nvim/pack/color/opt/rigel"]
 	path = nvim/.config/nvim/pack/color/opt/rigel
 	url = git@github.com:rigellute/rigel
+[submodule "nvim/.config/nvim/pack/color/opt/base16-vim"]
+	path = nvim/.config/nvim/pack/color/opt/base16-vim
+	url = git@github.com:chriskempson/base16-vim
