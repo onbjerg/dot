@@ -4,7 +4,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Configure physical displays
-LMONIT=DP-2
+LMONIT=HDMI-1
 RMONIT=DP-1
 xrandr --output $RMONIT --right-of $LMONIT
 xrandr --output $RMONIT --primary
