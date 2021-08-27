@@ -1,4 +1,4 @@
-packadd! rigel
+packadd! vim-gotham
 packadd! termdebug 
 
 "
@@ -34,8 +34,8 @@ set smartindent
 "
 " Theming
 "
-colorscheme rigel
-let g:rigel_lightline = 1
+syntax enable
+colorscheme gotham
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -52,6 +52,7 @@ endif
 "
 " Lightline configuration
 "
+set noshowmode
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
@@ -61,10 +62,10 @@ let g:lightline = {
       \   'filename': 'LightlineFilename',
       \   'cocstatus': 'coc#status'
       \ },
-      \ 'colorscheme': 'rigel',
+      \ 'colorscheme': 'gotham',
       \ }
 function! LightlineFilename()
-	return expand('%:t') !=# '' ? @% : '[No name]'
+	return expand('%:t') !=# '' ? @% : '- NO NAME -'
 endfunction
 
 " Polyglot config
