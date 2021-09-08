@@ -46,3 +46,6 @@ gnome-keyring-daemon --start --components=pkcs11
 
 # Polkit agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Fixes for specific programs
+bspc rule -a frame state=tiled
