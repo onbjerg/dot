@@ -1,6 +1,8 @@
 packadd! vim-gotham
 packadd! termdebug 
 
+lua require('gitsigns').setup()
+
 "
 " Editing experience
 "

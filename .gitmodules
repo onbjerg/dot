@@ -28,3 +28,9 @@
 [submodule "nvim/.config/nvim/pack/color/opt/vim-gotham"]
 	path = nvim/.config/nvim/pack/color/opt/vim-gotham
 	url = git@github.com:whatyouhide/vim-gotham
+[submodule "nvim/.config/nvim/pack/ui/start/gitsigns.nvim"]
+	path = nvim/.config/nvim/pack/ui/start/gitsigns.nvim
+	url = git@github.com:lewis6991/gitsigns.nvim
+[submodule "nvim/.config/nvim/pack/misc/start/plenary.nvim"]
+	path = nvim/.config/nvim/pack/misc/start/plenary.nvim
+	url = git@github.com:nvim-lua/plenary.nvim
