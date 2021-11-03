@@ -1,6 +1,9 @@
 # fnm
 set PATH /home/oliver/.fnm $PATH
-fnm env --multi | source
+fnm env | source
 
 # cargo
 set PATH /home/oliver/.cargo/bin $PATH
+
+# nix
+bass source $HOME/.nix-profile/etc/profile.d/nix.sh
