@@ -7,8 +7,8 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch bars
-PRIMARY=DP-1
-SECONDARY=HDMI-1
+PRIMARY=DP-2
+SECONDARY=HDMI-0
 MONITOR=$PRIMARY polybar -rq tray &
 MONITOR=$PRIMARY polybar -rq workspace &
 MONITOR=$SECONDARY polybar -rq workspace &
