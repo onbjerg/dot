@@ -1,9 +1,6 @@
 [submodule "nvim/.config/nvim/pack/syntax/start/vim-polyglot"]
 	path = nvim/.config/nvim/pack/syntax/start/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot
-[submodule "nvim/.config/nvim/pack/syntax/start/coc.nvim"]
-	path = nvim/.config/nvim/pack/syntax/start/coc.nvim
-	url = git@github.com:neoclide/coc.nvim
 [submodule "nvim/.config/nvim/pack/ui/start/fzf"]
 	path = nvim/.config/nvim/pack/ui/start/fzf
 	url = git@github.com:junegunn/fzf
@@ -34,3 +31,9 @@
 [submodule "nvim/.config/nvim/pack/misc/start/plenary.nvim"]
 	path = nvim/.config/nvim/pack/misc/start/plenary.nvim
 	url = git@github.com:nvim-lua/plenary.nvim
+[submodule "nvim/.config/nvim/pack/syntax/start/vim-yul"]
+	path = nvim/.config/nvim/pack/syntax/start/vim-yul
+	url = git@github.com:mattdf/vim-yul
+[submodule "nvim/.config/nvim/pack/syntax/start/nvim-lspconfig"]
+	path = nvim/.config/nvim/pack/syntax/start/nvim-lspconfig
+	url = git@github.com:neovim/nvim-lspconfig
