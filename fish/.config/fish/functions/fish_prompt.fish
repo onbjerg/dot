@@ -1,61 +1,38 @@
-# name: clearance
-# ---------------
-# Based on idan. Display the following bits on the left:
-# - Virtualenv name (if applicable, see https://github.com/adambrenecki/virtualfish)
-# - Current directory name
-# - Git branch and dirty state (if inside a git repo)
-
-function _git_branch_name
-  echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
+function fish_prompt
 end
 
-function _git_is_dirty
-  echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
+status is-interactive || exit
+
+_tide_remove_unusable_items
+_tide_cache_variables
+
+# The first element in $$_tide_prompt_var is right prompt
+# All remaining ones are 'left' prompt (also upper right in 2-line prompts)
+set -g _tide_prompt_var _tide_prompt_$fish_pid
+
+function _tide_refresh_prompt --on-variable $_tide_prompt_var
+    set -g _tide_self_repainting # prevents us from creating a second background job
+    commandline --function repaint
 end
 
 function fish_prompt
-  set -l last_status $status
+    _tide_last_status=$status _tide_last_pipestatus=$pipestatus if not set -e _tide_self_repainting
+        jobs --query
+        fish --command "_tide_jobs_status=$status CMD_DURATION=$CMD_DURATION COLUMNS=$COLUMNS \
+            fish_bind_mode=$fish_bind_mode set -U $_tide_prompt_var (_tide_prompt)" &
+        builtin disown
 
-  set -l cyan (set_color cyan)
-  set -l yellow (set_color yellow)
-  set -l red (set_color red)
-  set -l blue (set_color blue)
-  set -l green (set_color green)
-  set -l normal (set_color normal)
-
-  set -l cwd $blue(pwd | sed "s:^$HOME:~:")
-
-  # Output the prompt, left to right
-
-  # Add a newline before new prompts
-  echo -e ''
-
-  # Display [venvname] if in a virtualenv
-  if set -q VIRTUAL_ENV
-      echo -n -s (set_color -b cyan black) '[' (basename "$VIRTUAL_ENV") ']' $normal ' '
-  end
-
-  # Print pwd or full path
-  echo -n -s $cwd $normal
-
-  # Show git branch and status
-  if [ (_git_branch_name) ]
-    set -l git_branch (_git_branch_name)
-
-    if [ (_git_is_dirty) ]
-      set git_info '(' $yellow $git_branch "±" $normal ')'
-    else
-      set git_info '(' $green $git_branch $normal ')'
+        command kill $_tide_last_pid 2>/dev/null
+        set -g _tide_last_pid $last_pid
     end
-    echo -n -s ' · ' $git_info $normal
-  end
 
-  set -l prompt_color $red
-  if test $last_status = 0
-    set prompt_color $normal
-  end
+    string unescape $_tide_add_newline $$_tide_prompt_var[1][2..]
+end
 
-  # Terminate with a nice prompt char
-  echo -e ''
-  echo -e -n -s $prompt_color '⟩ ' $normal
+function fish_right_prompt
+    string unescape $$_tide_prompt_var[1][1]
+end
+
+function _tide_on_fish_exit --on-event fish_exit
+    set -e $_tide_prompt_var
 end
