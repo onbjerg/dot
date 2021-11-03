@@ -4,8 +4,8 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Configure physical displays
-LMONIT=HDMI-1
-RMONIT=DP-1
+LMONIT=HDMI-0
+RMONIT=DP-2
 xrandr --output $RMONIT --right-of $LMONIT
 xrandr --output $RMONIT --primary
 xrandr --output $LMONIT --mode 2560x1440 --rate 144
