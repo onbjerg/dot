@@ -29,7 +29,8 @@ bspc config gapless_monocle      true
 xsetroot -cursor_name left_ptr &
 
 # Bars
-$HOME/.config/polybar/launch.sh --shades &
+MONITOR="$LMONIT" $HOME/.config/polybar/launch.sh --shades &
+MONITOR="$RMONIT" $HOME/.config/polybar/launch.sh --shades &
 
 # Background
 feh --bg-fill $HOME/Pictures/Wallpapers/current.jpg &
