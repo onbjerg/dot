@@ -37,3 +37,18 @@
 [submodule "nvim/.config/nvim/pack/syntax/start/nvim-lspconfig"]
 	path = nvim/.config/nvim/pack/syntax/start/nvim-lspconfig
 	url = git@github.com:neovim/nvim-lspconfig
+[submodule "nvim/.config/nvim/pack/syntax/start/cmp-nvim-lsp"]
+	path = nvim/.config/nvim/pack/syntax/start/cmp-nvim-lsp
+	url = git@github.com:hrsh7th/cmp-nvim-lsp
+[submodule "nvim/.config/nvim/pack/syntax/start/cmp-buffer"]
+	path = nvim/.config/nvim/pack/syntax/start/cmp-buffer
+	url = git@github.com:hrsh7th/cmp-buffer
+[submodule "nvim/.config/nvim/pack/syntax/start/cmp-path"]
+	path = nvim/.config/nvim/pack/syntax/start/cmp-path
+	url = git@github.com:hrsh7th/cmp-path
+[submodule "nvim/.config/nvim/pack/syntax/start/cmp-cmdline"]
+	path = nvim/.config/nvim/pack/syntax/start/cmp-cmdline
+	url = git@github.com:hrsh7th/cmp-cmdline
+[submodule "nvim/.config/nvim/pack/syntax/start/nvim-cmp"]
+	path = nvim/.config/nvim/pack/syntax/start/nvim-cmp
+	url = git@github.com:hrsh7th/nvim-cmp
