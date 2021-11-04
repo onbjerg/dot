@@ -95,6 +95,7 @@ nnoremap <C-P> :Files<CR>
 "
 lua <<EOF
   -- Setup nvim-cmp.
+  local lspkind = require'lspkind'
   local cmp = require'cmp'
   cmp.setup({
     mapping = {
@@ -112,7 +113,10 @@ lua <<EOF
       { name = 'nvim_lsp' },
     }, {
       { name = 'buffer' },
-    })
+    }),
+    formatting = {
+      format = lspkind.cmp_format({with_text = false, maxwidth = 50})
+    }
   })
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).

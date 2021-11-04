@@ -52,3 +52,6 @@
 [submodule "nvim/.config/nvim/pack/syntax/start/nvim-cmp"]
 	path = nvim/.config/nvim/pack/syntax/start/nvim-cmp
 	url = git@github.com:hrsh7th/nvim-cmp
+[submodule "nvim/.config/nvim/pack/syntax/start/lspkind-nvim"]
+	path = nvim/.config/nvim/pack/syntax/start/lspkind-nvim
+	url = git@github.com:onsails/lspkind-nvim
