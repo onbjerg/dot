@@ -16,7 +16,7 @@ window:
     y: 0
 # Color Schemes
 schemes:
-  gotham: &current
+  gotham:
     # Default colors
     primary:
       background: '0x0a0f14'
@@ -43,7 +43,7 @@ schemes:
       magenta: '0x888ba5'
       cyan: '0x599caa'
       white: '0xd3ebe9'
-  ayu_dark:
+  ayu_dark: &current
     # Default colors
     primary:
       background: '0x0A0E14'

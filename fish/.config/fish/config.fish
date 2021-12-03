@@ -1,6 +1,6 @@
 # fnm
 set PATH /home/oliver/.fnm $PATH
-fnm env | source
+fnm env --shell fish | source
 
 # cargo
 set PATH /home/oliver/.cargo/bin $PATH
