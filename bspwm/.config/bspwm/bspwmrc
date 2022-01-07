@@ -5,16 +5,16 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Configure physical displays
 LMONIT=HDMI-0
-RMONIT=DP-2
-xrandr --output $RMONIT --right-of $LMONIT
-xrandr --output $RMONIT --primary
-xrandr --output $LMONIT --mode 2560x1440 --rate 144
-xrandr --output $RMONIT --mode 2560x1440 --rate 144
+MMONIT=DP-2
+RMONIT=HDMI-1
+xrandr --output $MMONIT --primary --mode 2560x1440 --rate 144
+xrandr --output $LMONIT --mode 2560x1440 --rate 144 --left-of $MMONIT
+xrandr --output $RMONIT --mode 2560x1440 --rate 144 --rotate right --right-of $MMONIT
 
 # Monitor setup
-bspc monitor $RMONIT -d I II III IV V
-bspc monitor $LMONIT -d VI VII VIII IX X
-bspc monitor $LMONIT -s $RMONIT
+bspc monitor $MMONIT -d I II III IV V
+bspc monitor $LMONIT -d VI VII VIII
+bspc monitor $RMONIT -d IX X
 
 # Gaps
 bspc config border_width         0
@@ -30,7 +30,7 @@ xsetroot -cursor_name left_ptr &
 
 # Bars
 MONITOR="$LMONIT" $HOME/.config/polybar/launch.sh --shades &
-MONITOR="$RMONIT" $HOME/.config/polybar/launch.sh --shades &
+MONITOR="$MMONIT" $HOME/.config/polybar/launch.sh --shades &
 
 # Background
 feh --bg-fill $HOME/Pictures/Wallpapers/current.jpg &
