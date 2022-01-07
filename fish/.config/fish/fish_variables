@@ -150,11 +150,13 @@ SETUVAR _fisher_jhillyerd_2F_plugin_2D_git_files:/home/oliver/\x2econfig/fish/fu
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/oliver/\x2econfig/fish/functions/fisher\x2efish\x1e/home/oliver/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_jorgebucaran_2F_hydro_files:/home/oliver/\x2econfig/fish/functions/fish_mode_prompt\x2efish\x1e/home/oliver/\x2econfig/fish/functions/fish_prompt\x2efish\x1e/home/oliver/\x2econfig/fish/functions/fish_title\x2efish\x1e/home/oliver/\x2econfig/fish/conf\x2ed/hydro\x2efish
 SETUVAR _fisher_plugins:jhillyerd/plugin\x2dgit\x1eedc/bass\x1ejorgebucaran/fisher\x1ejorgebucaran/hydro
+SETUVAR _hydro_git_141219:master\u2022\x20
+SETUVAR _hydro_git_170059:master\u2022\x20
 SETUVAR _hydro_git_30949:master\u2022\x20
 SETUVAR _hydro_git_33531:master\x20
 SETUVAR _hydro_git_37329:master\u2022\x20
 SETUVAR _hydro_git_39637:master\u2022\x20
-SETUVAR _hydro_git_55374:master\u2022\x20
+SETUVAR _hydro_git_52972:master\u2022\x20\u21912\x20
 SETUVAR _hydro_git_6349:master\u2022\x20
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
