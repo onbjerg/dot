@@ -25,3 +25,4 @@ for i in ${!options[@]}; do
 done
 echo "$msg"
 echo "Applied."
+echo "Remember to run `fisher update`."
