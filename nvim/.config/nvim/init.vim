@@ -1,7 +1,6 @@
 packadd! vim-gotham
 packadd! termdebug 
 
-lua require('gitsigns').setup()
 
 "
 " Editing experience
@@ -27,7 +26,9 @@ filetype indent on
 
 " Whitespace
 set expandtab
-set tabstop=2 shiftwidth=2 softtabstop=2
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set wrap
 set backspace=indent,eol,start
 set autoindent
@@ -58,27 +59,10 @@ endif
 " Lightline configuration
 "
 set noshowmode
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'filename': 'LightlineFilename',
-      \   'cocstatus': 'coc#status'
-      \ },
-      \ 'colorscheme': 'gotham',
-      \ }
-
-function! LightlineFilename()
-	return expand('%:t') !=# '' ? @% : '- NO NAME -'
-endfunction
 
 " Polyglot config
 let g:rustfmt_autosave = 1
 
-" Use autocmd to force lightline update on COC changes
-autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 "
 " FZF
@@ -94,10 +78,29 @@ nnoremap <C-P> :Files<CR>
 " LSP and nvim-cmp
 "
 lua <<EOF
+  -- Setup gitsigns
+  require('gitsigns').setup()
+
+  -- Setup lualine
+  require('lualine').setup {
+    sections = {
+      lualine_b = {
+        'branch',
+        'diff',
+        { 'diagnostics', sources = { 'nvim_lsp' } }
+      }
+    }
+  }
+
   -- Setup nvim-cmp.
   local lspkind = require'lspkind'
   local cmp = require'cmp'
   cmp.setup({
+    snippet = {
+      expand = function(args)
+        require('luasnip').lsp_expand(args.body)
+      end,
+    },
     mapping = {
       ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
       ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
@@ -123,8 +126,8 @@ lua <<EOF
   cmp.setup.cmdline('/', {
     sources = {
       { name = 'buffer' }
-    }
-  })
+      }
+    })
 
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline(':', {
@@ -139,8 +142,13 @@ lua <<EOF
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   require('lspconfig')['eslint'].setup {
     capabilities = capabilities
-    }
+  }
   require('lspconfig')['rust_analyzer'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    settings = {
+      ["rust-analyzer"] = {
+        checkOnSave = { enable = true }
+      }
     }
+  }
 EOF

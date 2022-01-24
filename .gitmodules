@@ -7,9 +7,6 @@
 [submodule "nvim/.config/nvim/pack/ui/start/fzf.vim"]
 	path = nvim/.config/nvim/pack/ui/start/fzf.vim
 	url = git@github.com:junegunn/fzf.vim
-[submodule "nvim/.config/nvim/pack/ui/start/lightline.vim"]
-	path = nvim/.config/nvim/pack/ui/start/lightline.vim
-	url = git@github.com:itchyny/lightline.vim
 [submodule "nvim/.config/nvim/pack/color/start/gruvbox"]
 	path = nvim/.config/nvim/pack/color/start/gruvbox
 	url = git@github.com:morhetz/gruvbox
@@ -55,3 +52,12 @@
 [submodule "nvim/.config/nvim/pack/syntax/start/lspkind-nvim"]
 	path = nvim/.config/nvim/pack/syntax/start/lspkind-nvim
 	url = git@github.com:onsails/lspkind-nvim
+[submodule "nvim/.config/nvim/pack/syntax/start/LuaSnip"]
+	path = nvim/.config/nvim/pack/syntax/start/LuaSnip
+	url = https://github.com/L3MON4D3/LuaSnip
+[submodule "nvim/.config/nvim/pack/syntax/start/cmp_luasnip"]
+	path = nvim/.config/nvim/pack/syntax/start/cmp_luasnip
+	url = https://github.com/saadparwaiz1/cmp_luasnip
+[submodule "nvim/.config/nvim/pack/ui/start/lualine.nvim"]
+	path = nvim/.config/nvim/pack/ui/start/lualine.nvim
+	url = https://github.com/nvim-lualine/lualine.nvim
