@@ -1,8 +1,6 @@
 # .
 
-![screenshot](./.github/scrot.png)
-
-Various dotfiles
+Various dotfiles.
 
 ### Usage
 
@@ -33,10 +31,6 @@ The bootstrap script assumes you have `stow` available on your system and that t
 - Syntax highlighting in the `fzf` preview window requires [`bat`](https://github.com/sharkdp/bat)
 - Requires [`ag`](https://github.com/ggreer/the_silver_searcher)
 
-#### fish
-
-- Optionally requires [`neofetch`](https://github.com/dylanaraps/neofetch)
-
 #### bspwm 
 
 - Requires [`polybar`](https://github.com/polybar/polybar) and [`feh`](https://github.com/derf/feh)
@@ -47,7 +41,3 @@ The bootstrap script assumes you have `stow` available on your system and that t
 - Requires [`rofi`](https://github.com/davatorium/rofi)
 - Requires [`scrot`](https://github.com/dreamer/scrot)
 
-#### polybar
-
-- Optionally requires [`playerctl`](https://github.com/altdesktop/playerctl) for Now Playing module
-- Optionally requires [`gh`](https://github.com/cli/cli) and `jq` for Github module
