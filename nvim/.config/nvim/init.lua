@@ -151,13 +151,14 @@ cmp.setup.cmdline(':', {
 })
 
 -- Configure LSP
+local lspconfig = require('lspconfig')
 local caps = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
-require('lspconfig')['eslint'].setup {
+lspconfig['eslint'].setup {
   capabilities = caps
 }
-require('lspconfig')['rust_analyzer'].setup {
+lspconfig['rust_analyzer'].setup {
   capabilities = caps,
   settings = {
     ["rust-analyzer"] = {
@@ -167,6 +168,7 @@ require('lspconfig')['rust_analyzer'].setup {
     }
   }
 }
+lspconfig['solc'].setup {}
 
 -- Format on save
 vim.api.nvim_command([[
