@@ -25,9 +25,11 @@ vim.o.relativenumber = true
 vim.g.mapleader = ','
 
 -- File type recognition
-vim.cmd('filetype on')
-vim.cmd('filetype plugin on')
-vim.cmd('filetype indent on')
+vim.cmd([[
+  filetype on
+  filetype plugin on
+  filetype indent on
+]])
 
 -- Indentation
 vim.o.expandtab = true
@@ -51,11 +53,13 @@ vim.opt.listchars = {
 }
 
 -- Theming
-vim.cmd('syntax enable')
 vim.o.termguicolors = true
 
-vim.cmd 'packadd! vim-gotham'
-vim.cmd('colorscheme gotham')
+vim.cmd([[
+  syntax enable
+  packadd! vim-gotham
+  colorscheme gotham
+]])
 
 -- FZF
 local vimp = require('vimp')
@@ -171,6 +175,6 @@ lspconfig['rust_analyzer'].setup {
 lspconfig['solc'].setup {}
 
 -- Format on save
-vim.api.nvim_command([[
+vim.cmd([[
   autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
 ]])
