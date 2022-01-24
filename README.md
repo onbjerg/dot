@@ -22,6 +22,11 @@ The bootstrap script assumes you have `stow` available on your system and that t
 
 ### Notes
 
+#### Overall
+
+- Requires [`exa`](https://github.com/ogham/exa) since `ls` is aliased to `exa`
+- Requires [`bat`](https://github.com/sharkdp/bat) since `cat` is aliased to `bat`
+
 #### git
 
 - Requires [`delta`](https://github.com/dandavison/delta)
