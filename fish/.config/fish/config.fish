@@ -7,3 +7,5 @@ set PATH /home/oliver/.cargo/bin $PATH
 
 # nix
 bass source $HOME/.nix-profile/etc/profile.d/nix.sh
+
+export PATH="$PATH:/home/oliver/.foundry/bin"
