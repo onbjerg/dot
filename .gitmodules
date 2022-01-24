@@ -1,12 +1,6 @@
 [submodule "nvim/.config/nvim/pack/syntax/start/vim-polyglot"]
 	path = nvim/.config/nvim/pack/syntax/start/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot
-[submodule "nvim/.config/nvim/pack/ui/start/fzf"]
-	path = nvim/.config/nvim/pack/ui/start/fzf
-	url = git@github.com:junegunn/fzf
-[submodule "nvim/.config/nvim/pack/ui/start/fzf.vim"]
-	path = nvim/.config/nvim/pack/ui/start/fzf.vim
-	url = git@github.com:junegunn/fzf.vim
 [submodule "nvim/.config/nvim/pack/color/start/gruvbox"]
 	path = nvim/.config/nvim/pack/color/start/gruvbox
 	url = git@github.com:morhetz/gruvbox
@@ -61,3 +55,9 @@
 [submodule "nvim/.config/nvim/pack/ui/start/lualine.nvim"]
 	path = nvim/.config/nvim/pack/ui/start/lualine.nvim
 	url = https://github.com/nvim-lualine/lualine.nvim
+[submodule "nvim/.config/nvim/pack/ui/start/fzf-lua"]
+	path = nvim/.config/nvim/pack/ui/start/fzf-lua
+	url = https://github.com/ibhagwan/fzf-lua
+[submodule "nvim/.config/nvim/pack/misc/start/vimpeccable"]
+	path = nvim/.config/nvim/pack/misc/start/vimpeccable
+	url = https://github.com/svermeulen/vimpeccable
