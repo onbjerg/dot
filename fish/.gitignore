@@ -10,3 +10,9 @@ fish_variables
 !.config/fish/functions/clock.fish
 !.config/fish/functions/fisher.fish
 !.config/fish/functions/ls.fish
+
+# Ignore configs installed by Fisher
+.config/fish/conf.d/*
+!.config/fish/conf.d/fnm.fish
+!.config/fish/conf.d/greeting.fish
+!.config/fish/conf.d/secrets.fish
