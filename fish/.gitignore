@@ -1,2 +1,12 @@
 digitalocean.fish
 fish_variables
+
+# Ignore functions installed by Fisher
+.config/fish/functions/*
+!.config/fish/functions/ws.fish
+!.config/fish/functions/pbcopy.fish
+!.config/fish/functions/pbpaste.fish
+!.config/fish/functions/cat.fish
+!.config/fish/functions/clock.fish
+!.config/fish/functions/fisher.fish
+!.config/fish/functions/ls.fish
