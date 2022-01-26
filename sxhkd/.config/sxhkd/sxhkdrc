@@ -14,10 +14,6 @@ super + shift + x
 super + Escape
 	pkill -USR1 -x sxhkd
 
-# Show help
-super + alt + slash
-	~/.config/sxhkd/help.sh
-
 #
 # bspwm hotkeys
 #
