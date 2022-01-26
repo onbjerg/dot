@@ -57,8 +57,8 @@ vim.o.termguicolors = true
 
 vim.cmd([[
   syntax enable
-  packadd! vim-gotham
-  colorscheme gotham
+  packadd! tokyonight.nvim
+  colorscheme tokyonight
 ]])
 
 -- FZF
@@ -101,6 +101,9 @@ require('gitsigns').setup()
 -- Status line
 vim.o.showmode = false
 require('lualine').setup {
+  options = {
+    theme = 'tokyonight'
+  },
   sections = {
     lualine_b = {
       'branch',

@@ -61,3 +61,6 @@
 [submodule "nvim/.config/nvim/pack/misc/start/vimpeccable"]
 	path = nvim/.config/nvim/pack/misc/start/vimpeccable
 	url = https://github.com/svermeulen/vimpeccable
+[submodule "nvim/.config/nvim/pack/color/opt/tokyonight.nvim"]
+	path = nvim/.config/nvim/pack/color/opt/tokyonight.nvim
+	url = https://github.com/folke/tokyonight.nvim
