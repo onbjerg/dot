@@ -1,4 +1,35 @@
-vim.cmd 'packadd! termdebug'
+require 'paq' {
+  -- Let Paq manage itself
+  'savq/paq-nvim';
+
+  -- UI
+  {'ibhagwan/fzf-lua', run = './install --bin'};
+  'lewis6991/gitsigns.nvim';
+  'nvim-lualine/lualine.nvim';
+
+  -- LSP
+  'neovim/nvim-lspconfig';
+  'onsails/lspkind-nvim';
+
+  -- Languages
+  'sheerun/vim-polyglot';
+
+  -- Autocomplete
+  'hrsh7th/nvim-cmp';
+  'hrsh7th/cmp-buffer';
+  'hrsh7th/cmp-cmdline';
+  'hrsh7th/cmp-nvim-lsp';
+  'hrsh7th/cmp-path';
+  'saadparwaiz1/cmp_luasnip';
+  'L3MON4D3/LuaSnip';
+
+  -- Themes
+  'folke/tokyonight.nvim';
+
+  -- Misc
+  'svermeulen/vimpeccable';
+  'nvim-lua/plenary.nvim';
+}
 
 vim.o.encoding = 'UTF-8'
 
@@ -57,7 +88,6 @@ vim.o.termguicolors = true
 
 vim.cmd([[
   syntax enable
-  packadd! tokyonight.nvim
   colorscheme tokyonight
 ]])
 
