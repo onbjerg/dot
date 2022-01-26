@@ -8,7 +8,7 @@ super + d
 
 # Take a screenshot of a region or window
 super + shift + x
-	scrot -f -s -b "$HOME/Pictures/Screenshot from %F %T.png" -e 'gthumb "$f"'; notify-send "Screenshot taken"
+	shotgun (hacksaw -f "-i %i -g %g" | string split " ") - | xclip -selection clipboard -t image/png
 
 # Reload sxhkd config
 super + Escape

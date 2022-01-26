@@ -44,5 +44,5 @@ The bootstrap script assumes you have `stow` available on your system and that t
 #### sxhkd
 
 - Requires [`rofi`](https://github.com/davatorium/rofi)
-- Requires [`scrot`](https://github.com/dreamer/scrot)
+- Requires [`shotgun`](https://github.com/neXromancers/shotgun) and [`hacksaw`](https://github.com/neXromancers/hacksaw) for screenshots
 
