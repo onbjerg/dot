@@ -5,10 +5,6 @@ font:
   normal:
     family: MesloLGS NF
   size: 14
-shell:
-  program: /bin/fish
-  args:
-    - --login
 window:
   dynamic_padding: true
   padding:
