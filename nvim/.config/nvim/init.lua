@@ -6,6 +6,8 @@ require 'paq' {
   {'ibhagwan/fzf-lua', run = './install --bin'};
   'lewis6991/gitsigns.nvim';
   'nvim-lualine/lualine.nvim';
+  'noib3/nvim-cokeline';
+  'kyazdani42/nvim-web-devicons';
 
   -- LSP
   'neovim/nvim-lspconfig';
@@ -53,7 +55,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 -- Set leader to ,
-vim.g.mapleader = ','
+vim.g.mapleader = ' '
 
 -- File type recognition
 vim.cmd([[
@@ -124,6 +126,14 @@ vimp.nnoremap('<leader>f', function()
   -- Leader + F to search entire project
   require('fzf-lua').grep_project()
 end)
+
+-- Buffers
+vimp.nnoremap('<leader>,', ':bp<cr>')
+vimp.nnoremap('<leader>.', ':bn<cr>')
+vimp.nnoremap('<leader>c', ':bd<cr>')
+
+-- Buffer line
+require('cokeline').setup()
 
 -- Add gitsigns
 require('gitsigns').setup()
