@@ -127,6 +127,11 @@ vimp.nnoremap('<leader>f', function()
   require('fzf-lua').grep_project()
 end)
 
+-- Terminal
+vimp.nnoremap('<leader>t', ':terminal<CR>')
+vimp.tnoremap('<esc>', '<C-\\><C-n>')
+vim.env.GIT_EDITOR = 'nvr -cc split --remote-wait'
+
 -- Buffers
 vimp.nnoremap('<leader>,', ':bp<cr>')
 vimp.nnoremap('<leader>.', ':bn<cr>')
