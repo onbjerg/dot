@@ -2,12 +2,16 @@ require 'paq' {
   -- Let Paq manage itself
   'savq/paq-nvim';
 
+  -- Core
+  'nvim-treesitter/nvim-treesitter';
+
   -- UI
   {'ibhagwan/fzf-lua', run = './install --bin'};
   'lewis6991/gitsigns.nvim';
   'nvim-lualine/lualine.nvim';
   'noib3/nvim-cokeline';
   'kyazdani42/nvim-web-devicons';
+  'SmiteshP/nvim-gps';
 
   -- LSP
   'neovim/nvim-lspconfig';
@@ -145,6 +149,10 @@ require('gitsigns').setup()
 
 -- Status line
 vim.o.showmode = false
+
+local gps = require('nvim-gps')
+gps.setup()
+
 require('lualine').setup {
   options = {
     theme = 'tokyonight'
@@ -153,8 +161,13 @@ require('lualine').setup {
     lualine_b = {
       'branch',
       'diff',
-      { 'diagnostics', sources = { 'nvim_lsp' } }
-    }
+      { 'diagnostics', sources = { 'nvim_lsp' } },
+    },
+    lualine_c = {
+      'filename',
+      { gps.get_location, cond = gps.is_available },
+    },
+    lualine_y = {},
   }
 }
 
