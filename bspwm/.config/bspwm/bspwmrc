@@ -50,3 +50,6 @@ gnome-keyring-daemon --start --components=pkcs11
 
 # Fixes for specific programs
 bspc rule -a frame state=tiled
+
+# ProtonMail Bridge
+protonmail-bridge --no-window --noninteractive &
