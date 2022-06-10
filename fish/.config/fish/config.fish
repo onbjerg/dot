@@ -7,3 +7,6 @@ set PATH $HOME/.cargo/bin $PATH
 
 # Foundry
 set PATH $HOME/.foundry/bin $PATH
+
+# Prompt
+starship init fish | source
