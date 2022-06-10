@@ -10,7 +10,7 @@
 [pull]
 	rebase = false
 [push]
-	default = current
+	default = upstream
 [core]
 	editor = nvim
 [commit]
