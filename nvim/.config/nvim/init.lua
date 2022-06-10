@@ -30,7 +30,7 @@ require 'paq' {
   'L3MON4D3/LuaSnip';
 
   -- Themes
-  'folke/tokyonight.nvim';
+  'Shatur/neovim-ayu';
 
   -- Misc
   'svermeulen/vimpeccable';
@@ -94,7 +94,7 @@ vim.o.termguicolors = true
 
 vim.cmd([[
   syntax enable
-  colorscheme tokyonight
+  colorscheme ayu-dark
 ]])
 
 -- FZF
@@ -155,7 +155,7 @@ gps.setup()
 
 require('lualine').setup {
   options = {
-    theme = 'tokyonight'
+    theme = 'ayu_dark'
   },
   sections = {
     lualine_b = {
