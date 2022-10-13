@@ -31,3 +31,6 @@ Use [`chezmoi`](https://www.chezmoi.io)
 - Syntax highlighting in the `fzf` preview window requires [`bat`](https://github.com/sharkdp/bat)
 - Requires [`ag`](https://github.com/ggreer/the_silver_searcher)
 
+#### cargo
+
+- Uses `sccache`
