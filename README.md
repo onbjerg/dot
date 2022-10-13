@@ -4,7 +4,7 @@ Various dotfiles.
 
 ### Usage
 
-Use [`chezmoi`][https://www.chezmoi.io]
+Use [`chezmoi`](https://www.chezmoi.io)
 
 ### Configs
 
