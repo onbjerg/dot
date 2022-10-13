@@ -1,4 +1,0 @@
-configuration {
-	combi-hide-mode-prefix: true;
-	display-combi: "▶";
-}

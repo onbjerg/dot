@@ -1,0 +1,32 @@
+[user]
+	email = hi@notbjerg.me
+	name = Oliver Nordbjerg
+	signingkey = 3548B2DE48EBABB9303F69CE3B182D3AD953AB4B
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	rebase = false
+[push]
+	default = simple
+[core]
+	editor = nvim
+[commit]
+	verbose = true
+	gpgsign = true
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	features = side-by-side line-numbers decorations
+	whitespace-error-style = 22 reverse
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
