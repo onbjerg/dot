@@ -33,4 +33,5 @@ Use [`chezmoi`](https://www.chezmoi.io)
 
 #### cargo
 
-- Uses `sccache`
+- Uses [`sccache`](https://github.com/mozilla/sccache) (note: incremental compilation is [disabled][sccache_incremental])
+- On Linux, [`mold`](https://github.com/rui314/mold) is used as a linker
