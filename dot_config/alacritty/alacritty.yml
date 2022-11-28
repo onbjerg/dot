@@ -4,11 +4,10 @@ font:
     family: MesloLGS NF
   size: 14
 window:
-  decorations: none
-  dynamic_padding: true
   padding:
     x: 0
     y: 0
+  title: Alacritty
 # Color Schemes
 schemes:
   falcon:
