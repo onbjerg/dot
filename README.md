@@ -31,7 +31,13 @@ Use [`chezmoi`](https://www.chezmoi.io)
 - Syntax highlighting in the `fzf` preview window requires [`bat`](https://github.com/sharkdp/bat)
 - Requires [`ag`](https://github.com/ggreer/the_silver_searcher)
 
+#### rust
+
+The home (`RUSTUP_HOME`) is set to `$HOME/.local/share/rustup`.
+
 #### cargo
+
+The home (`CARGO_HOME`) is set to `$HOME/.local/share/cargo`.
 
 - Uses [`sccache`](https://github.com/mozilla/sccache) (note: incremental compilation is [disabled][sccache_incremental])
 - On Linux, [`mold`](https://github.com/rui314/mold) is used as a linker
