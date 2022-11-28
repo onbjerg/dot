@@ -4,7 +4,9 @@ if status is-interactive
     fnm env --shell fish | source
 
     # Rust
-    set PATH $HOME/.cargo/bin $PATH
+    set RUSTUP_HOME $HOME/.local/share/rustup
+    set CARGO_HOME $HOME/.local/share/cargo
+    set PATH $HOME/.local/share/cargo/bin $PATH
 
     # Foundry
     set PATH $HOME/.foundry/bin $PATH
