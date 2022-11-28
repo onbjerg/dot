@@ -1,13 +1,12 @@
 alt_send_esc: false
 font:
-  normal:
-    family: MesloLGS NF
-  size: 14
+  size: 12
 window:
   padding:
     x: 0
     y: 0
   title: Alacritty
+  dynamic_title: false
 # Color Schemes
 schemes:
   falcon:
