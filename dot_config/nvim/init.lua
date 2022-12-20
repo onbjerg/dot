@@ -230,6 +230,9 @@ lspconfig['rust_analyzer'].setup {
       procMacro = {
         enable = true
       },
+      rustfmt = {
+        extraArgs = {"+nightly"}
+      }
     }
   }
 }
