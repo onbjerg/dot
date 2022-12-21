@@ -11,7 +11,8 @@ require 'paq' {
   'nvim-lualine/lualine.nvim';
   'noib3/nvim-cokeline';
   'kyazdani42/nvim-web-devicons';
-  'SmiteshP/nvim-gps';
+  'SmiteshP/nvim-navic';
+  'rcarriga/nvim-notify';
 
   -- LSP
   'neovim/nvim-lspconfig';
@@ -35,6 +36,7 @@ require 'paq' {
   -- Misc
   'svermeulen/vimpeccable';
   'nvim-lua/plenary.nvim';
+  'saecki/crates.nvim';
 }
 
 vim.o.encoding = 'UTF-8'
@@ -139,7 +141,7 @@ vim.env.GIT_EDITOR = 'nvr -cc split --remote-wait'
 -- Buffers
 vimp.nnoremap('<leader>,', ':bp<cr>')
 vimp.nnoremap('<leader>.', ':bn<cr>')
-vimp.nnoremap('<leader>c', ':bd<cr>')
+vimp.nnoremap('<leader>c', ':bd!<cr>')
 
 -- Buffer line
 require('cokeline').setup()
@@ -150,9 +152,7 @@ require('gitsigns').setup()
 -- Status line
 vim.o.showmode = false
 
-local gps = require('nvim-gps')
-gps.setup()
-
+local navic = require('nvim-navic')
 require('lualine').setup {
   options = {
     theme = 'ayu_dark'
@@ -165,13 +165,14 @@ require('lualine').setup {
     },
     lualine_c = {
       'filename',
-      { gps.get_location, cond = gps.is_available },
+      { navic.get_location, cond = navic.is_available },
     },
     lualine_y = {},
   }
 }
 
 -- Autocomplete
+local crates = require('crates').setup()
 local lspkind = require'lspkind'
 local cmp = require'cmp'
 cmp.setup {
@@ -180,21 +181,20 @@ cmp.setup {
       require('luasnip').lsp_expand(args.body)
     end,
   },
-  mapping = {
-    ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
     ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ['<C-y>'] = cmp.config.disable,
     ['<C-e>'] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-  },
+  }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-  }, {
     { name = 'buffer' },
+    { name = 'crates' },
   }),
   formatting = {
     format = lspkind.cmp_format({with_text = false, maxwidth = 50})
@@ -217,14 +217,15 @@ cmp.setup.cmdline(':', {
 
 -- Configure LSP
 local lspconfig = require('lspconfig')
-local caps = require('cmp_nvim_lsp').update_capabilities(
-  vim.lsp.protocol.make_client_capabilities()
-)
+local caps = require('cmp_nvim_lsp').default_capabilities()
 lspconfig['eslint'].setup {
   capabilities = caps
 }
 lspconfig['rust_analyzer'].setup {
   capabilities = caps,
+  on_attach = function(client, bufnr)
+    navic.attach(client, bufnr)
+  end,
   settings = {
     ["rust-analyzer"] = {
       procMacro = {
@@ -236,9 +237,29 @@ lspconfig['rust_analyzer'].setup {
     }
   }
 }
-lspconfig['solc'].setup {}
+
+-- Notifications
+local notify = require('notify')
+vim.notify = notify
+
+vim.lsp.handlers['window/showMessage'] = function(_, result, ctx)
+  local client = vim.lsp.get_client_by_id(ctx.client)
+  local lvl = ({
+      'ERROR',
+      'WARN',
+      'INFO',
+      'DEBUG',
+  })[result.type]
+  notify({ result.message }, lvl, {
+      title = 'LSP | ' .. client.name,
+      timeout = 10000,
+      keep = function ()
+        return lvl == 'ERROR' or lvl == 'WARN'
+      end,
+  })
+end
 
 -- Format on save
 vim.cmd([[
-  autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
+  autocmd BufWritePre *.rs lua vim.lsp.buf.format()
 ]])
