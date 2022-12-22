@@ -6,7 +6,8 @@ require 'paq' {
   'nvim-treesitter/nvim-treesitter';
 
   -- UI
-  {'ibhagwan/fzf-lua', run = './install --bin'};
+  'nvim-telescope/telescope.nvim';
+  {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'};
   'lewis6991/gitsigns.nvim';
   'nvim-lualine/lualine.nvim';
   'noib3/nvim-cokeline';
@@ -99,39 +100,43 @@ vim.cmd([[
   colorscheme ayu-dark
 ]])
 
--- FZF
-local vimp = require('vimp')
-
-require('fzf-lua').setup {
-  files = {
-    cmd = 'ag --hidden --ignore .git -g ""'
-  },
-  winopts = {
-    preview = {
-      default = 'bat',
+-- Telescope
+require('telescope').setup {
+  defaults = {
+    vimgrep_arguments = {
+      "ag",
+      "--nocolor",
+      "--no-heading",
+      "--filename",
+      "--numbers",
+      "--column",
+      "--smart-case",
     },
+    file_previewer = require('telescope.previewers').cat.new,
   },
-  previewers = {
-    git_diff = {
-      pager = 'delta',
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = 'smart_case',
     }
-  },
+  }
 }
+require('telescope').load_extension('fzf')
 
-vimp.nnoremap('<C-p>', function()
-  -- Ctrl + P for files
-  require('fzf-lua').files()
-end)
+local vimp = require('vimp')
+local builtin = require('telescope.builtin')
 
-vimp.nnoremap('<C-f>', function()
-  -- Ctrl + F to search current file
-  require('fzf-lua').grep()
-end)
 
-vimp.nnoremap('<leader>f', function()
-  -- Leader + F to search entire project
-  require('fzf-lua').grep_project()
-end)
+-- Ctrl + P for files
+vimp.nnoremap('<C-p>', builtin.find_files)
+
+-- Leader + P for commands
+vimp.nnoremap('<leader>p', builtin.commands)
+
+-- Leader + F to search entire project
+vimp.nnoremap('<leader>f', builtin.live_grep)
 
 -- Terminal
 vimp.nnoremap('<leader>t', ':terminal<CR>')
