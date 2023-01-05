@@ -1,3 +1,13 @@
+-- Telescope?
+--  - symbols
+--  - command palette
+-- Better LSP bindings?
+--  - peek definition
+--  - autocomplete
+--  - code actions
+-- check out:
+-- https://github.com/phaazon/hop.nvim
+-- https://github.com/weilbith/nvim-code-action-menu
 require 'paq' {
   -- Let Paq manage itself
   'savq/paq-nvim';
