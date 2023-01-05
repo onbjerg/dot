@@ -14,6 +14,7 @@ Use [`chezmoi`](https://www.chezmoi.io)
 - [alacritty](./dot_config/alacritty)
 - [fontconfig](./dot_config/fontconfig)
 - [cargo](./dot_cargo)
+- [tealdeer](./dot_config/tealdeer)
 
 ### Notes
 
