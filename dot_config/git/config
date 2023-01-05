@@ -1,7 +1,7 @@
 [user]
 	email = hi@notbjerg.me
 	name = Oliver Nordbjerg
-	signingkey = 3548B2DE48EBABB9303F69CE3B182D3AD953AB4B
+	signingkey = 3B182D3AD953AB4B
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -13,6 +13,7 @@
 	default = simple
 [core]
 	editor = nvim
+	excludesfile = /home/oliver/.config/git/gitignore
 [commit]
 	verbose = true
 	gpgsign = true
@@ -30,4 +31,3 @@
 	commit-decoration-style = bold yellow box ul
 	file-style = bold yellow ul
 	file-decoration-style = none
-
