@@ -1,6 +1,5 @@
-function ws
+function ws -d "Clone or move to a project"
 	set -l repo $argv[1]
-	set -l hub $argv[2]
 
 	set -l root $HOME/Projects
 	if test -d /media/vault/Projects
