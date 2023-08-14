@@ -1,0 +1,61 @@
+{
+    "layer": "top",
+    "modules-left": ["sway/mode", "sway/workspaces"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["custom/notifications", "custom/gh", "tray", "pulseaudio", "clock"],
+    "sway/window": {
+        "max-length": 50
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%a %b %d %H:%M}"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "custom/gh": {
+        "tooltip": false,
+        "format": "{icon} {}",
+        "format-icons": "🐱",
+        "interval": "600",
+        "exec": "gh notify -s | wc -l",
+        "on-click": "open https://github.com/notifications"
+    }
+}
