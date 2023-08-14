@@ -8,19 +8,24 @@
 -- check out:
 -- https://github.com/phaazon/hop.nvim
 -- https://github.com/weilbith/nvim-code-action-menu
+-- todo: replace this with lazy.nvim
+-- todo: split into multiple files
 require 'paq' {
   -- Let Paq manage itself
   'savq/paq-nvim';
 
   -- Core
   'nvim-treesitter/nvim-treesitter';
+  'stevearc/oil.nvim';
+  'numtostr/FTerm.nvim';
 
   -- UI
   'nvim-telescope/telescope.nvim';
   {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'};
   'lewis6991/gitsigns.nvim';
   'nvim-lualine/lualine.nvim';
-  'noib3/nvim-cokeline';
+  'nvim-lua/lsp-status.nvim';
+  'willothy/nvim-cokeline';
   'kyazdani42/nvim-web-devicons';
   'SmiteshP/nvim-navic';
   'rcarriga/nvim-notify';
@@ -48,6 +53,7 @@ require 'paq' {
   'svermeulen/vimpeccable';
   'nvim-lua/plenary.nvim';
   'saecki/crates.nvim';
+  {'iamcco/markdown-preview.nvim', run = function() vim.fn["mkdp#util#install"]() end};
 }
 
 vim.o.encoding = 'UTF-8'
@@ -110,6 +116,18 @@ vim.cmd([[
   colorscheme ayu-dark
 ]])
 
+-- File manager
+require('oil').setup()
+
+-- Floating terminal
+require 'FTerm'.setup({
+    border = 'double',
+    dimensions = {
+      width = 0.9,
+      height = 0.9,
+    },
+})
+
 -- Telescope
 require('telescope').setup {
   defaults = {
@@ -138,7 +156,6 @@ require('telescope').load_extension('fzf')
 local vimp = require('vimp')
 local builtin = require('telescope.builtin')
 
-
 -- Ctrl + P for files
 vimp.nnoremap('<C-p>', builtin.find_files)
 
@@ -148,9 +165,12 @@ vimp.nnoremap('<leader>p', builtin.commands)
 -- Leader + F to search entire project
 vimp.nnoremap('<leader>f', builtin.live_grep)
 
+-- Leader + R for workspace symbols
+vimp.nnoremap('<leader>r', builtin.lsp_workspace_symbols)
+
 -- Terminal
-vimp.nnoremap('<leader>t', ':terminal<CR>')
-vimp.tnoremap('<esc>', '<C-\\><C-n>')
+vimp.nnoremap('<leader>t', '<CMD>lua require("FTerm").toggle()<CR>')
+vimp.tnoremap('<leader>t', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 vim.env.GIT_EDITOR = 'nvr -cc split --remote-wait'
 
 -- Buffers
@@ -181,6 +201,9 @@ require('lualine').setup {
     lualine_c = {
       'filename',
       { navic.get_location, cond = navic.is_available },
+    },
+    lualine_d = {
+      "require'lsp-status'.status()",
     },
     lualine_y = {},
   }
@@ -233,6 +256,10 @@ cmp.setup.cmdline(':', {
 -- Configure LSP
 local lspconfig = require('lspconfig')
 local caps = require('cmp_nvim_lsp').default_capabilities()
+
+local lsp_status = require('lsp-status')
+lsp_status.register_progress()
+
 lspconfig['eslint'].setup {
   capabilities = caps
 }
@@ -240,6 +267,7 @@ lspconfig['rust_analyzer'].setup {
   capabilities = caps,
   on_attach = function(client, bufnr)
     navic.attach(client, bufnr)
+    lsp_status.on_attach(client, bufnr)
   end,
   settings = {
     ["rust-analyzer"] = {
@@ -247,6 +275,10 @@ lspconfig['rust_analyzer'].setup {
         enable = true
       },
       rustfmt = {
+        extraArgs = {"+nightly"}
+      },
+      checkOnSave = {
+        command = "clippy",
         extraArgs = {"+nightly"}
       }
     }
