@@ -1,0 +1,26 @@
+[user]
+name = "Oliver Nordbjerg"
+email = "hi@notbjerg.me"
+
+[signing]
+behavior = "own"
+backend = "gpg"
+
+[revsets]
+log = "present(@) | ancestors(immutable_heads().., 2) | present(trunk())"
+
+[revset-aliases]
+remote = "@ | ancestors(remote_bookmarks(), 5)"
+tracked = "@ | ancestors(bookmarks(), 5)"
+mine = "@ | ancestors(mine(), 5)"
+
+[aliases]
+tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+
+[fix.tools.rustfmt]
+command = ["cargo", "+nightly", "fmt", "--", "--emit", "stdout"]
+patterns = ["glob:'**/*.rs'"]
+
+[ui]
+diff-editor = ["zed", "--wait", "--diff", "$left", "$right"]
+conflict-marker-style = "git" # Required for zed since there is no native jj conflict marker support.

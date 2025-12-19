@@ -1,0 +1,20 @@
+version: v1
+
+mode: file
+
+plans:
+  all:
+
+groups:
+  fish:
+    nux: "~/.config/fish"
+    mac: "~/.config/fish"
+  git:
+    nux: "~/.config/git"
+    mac: "~/.config/git"
+  jj:
+    nux: "~/.config/jj"
+    mac: "~/.config/jj"
+  zed:
+    nux: "~/.config/zed"
+    mac: "~/.config/zed"

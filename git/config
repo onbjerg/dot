@@ -1,0 +1,24 @@
+[user]
+    email = hi@notbjerg.me
+    name = Oliver Nordbjerg
+	signingkey = C61333FC99933B7C
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[pull]
+    rebase = false
+[push]
+    default = simple
+[core]
+    excludesfile = /home/oliver/.config/git/gitignore
+[commit]
+    verbose = true
+	gpgsign = true
+[diff]
+    colorMoved = default
+[merge]
+    conflictstyle = diff3
+[tag]
+	gpgsign = true

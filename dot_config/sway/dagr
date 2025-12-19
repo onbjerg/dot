@@ -1,6 +1,0 @@
-# Displays
-output DP-1 mode 2560x1440@144Hz position 0,0 transform 90
-output DP-2 mode 2560x1440@144Hz position 1440,629
-output DP-3 mode 2560x1440@144Hz position 4000,629
-
-
