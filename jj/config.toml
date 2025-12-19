@@ -7,6 +7,8 @@ behavior = "own"
 backend = "gpg"
 
 [revsets]
+'default()' = 'coalesce(trunk(),root())::present(@) | ancestors(visible_heads() & recent(), 5)'
+'closest_bookmark(to)' = 'heads(::to & bookmarks())'
 log = "present(@) | ancestors(immutable_heads().., 2) | present(trunk())"
 
 [revset-aliases]
@@ -22,5 +24,10 @@ command = ["cargo", "+nightly", "fmt", "--", "--emit", "stdout"]
 patterns = ["glob:'**/*.rs'"]
 
 [ui]
+default-command = ["log"]
+editor = "zeditor -w"
 diff-editor = ["zed", "--wait", "--diff", "$left", "$right"]
 conflict-marker-style = "git" # Required for zed since there is no native jj conflict marker support.
+
+[git]
+write-change-id-header = true
