@@ -20,14 +20,24 @@ mine = "@ | ancestors(mine(), 5)"
 tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
 
 [fix.tools.rustfmt]
-command = ["cargo", "+nightly", "fmt", "--", "--emit", "stdout"]
+command = ["rustfmt", "+nightly", "--emit", "stdout"]
 patterns = ["glob:'**/*.rs'"]
 
 [ui]
 default-command = ["log"]
+
 editor = "zeditor -w"
 diff-editor = ["zed", "--wait", "--diff", "$left", "$right"]
 conflict-marker-style = "git" # Required for zed since there is no native jj conflict marker support.
 
+diff-formatter = ["difft", "--color=always", "$left", "$right"]
+
 [git]
 write-change-id-header = true
+sign-on-push = true
+
+[remotes.origin]
+auto-track-bookmarks = "glob:onbjerg/*"
+
+[templates]
+git_push_bookmark = '"onbjerg/push-" ++ change_id.short()'
