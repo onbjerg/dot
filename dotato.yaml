@@ -6,6 +6,9 @@ plans:
   all:
 
 groups:
+  amp:
+    nux: "~/.config/amp"
+    mac: "~/.config/amp"
   fish:
     nux: "~/.config/fish"
     mac: "~/.config/fish"
