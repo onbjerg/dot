@@ -12,6 +12,9 @@ groups:
   fish:
     nux: "~/.config/fish"
     mac: "~/.config/fish"
+  ghostty:
+    nux: "~/.config/ghostty"
+    mac: "~/.config/ghostty"
   git:
     nux: "~/.config/git"
     mac: "~/.config/git"
