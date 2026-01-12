@@ -1,0 +1,7 @@
+{
+  "allowedCommands": [
+    "cargo clippy*",
+    "cargo +nightly clippy*",
+    "cargo fmt*"
+  ]
+}

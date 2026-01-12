@@ -1,3 +1,4 @@
 *
 !docs/*.md
 !AGENTS.md
+!settings.json
