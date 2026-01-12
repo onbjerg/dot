@@ -2,6 +2,10 @@
   "allowedCommands": [
     "cargo clippy*",
     "cargo +nightly clippy*",
-    "cargo fmt*"
+    "cargo fmt*",
+    "jj diff",
+    "jj log",
+    "jj show",
+    "jj status"
   ]
 }
