@@ -7,22 +7,26 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "which_key": {
+    "delay_ms": 1000,
+    "enabled": true,
+  },
   "buffer_line_height": "standard",
   "buffer_font_weight": 400.0,
   "buffer_font_size": 15.0,
   "git": {
     "inline_blame": {
-      "show_commit_summary": false
-    }
+      "show_commit_summary": false,
+    },
   },
   "use_system_window_tabs": false,
   "tab_bar": {
-    "show_nav_history_buttons": false
+    "show_nav_history_buttons": false,
   },
   "tabs": {
     "close_position": "right",
     "file_icons": false,
-    "git_status": true
+    "git_status": true,
   },
   "ui_font_family": ".ZedSans",
   "buffer_font_family": "CommitMono",
@@ -30,25 +34,25 @@
   "agent": {
     "default_model": {
       "provider": "anthropic",
-      "model": "claude-opus-4-latest"
+      "model": "claude-opus-4-latest",
     },
     "always_allow_tool_actions": true,
-    "default_profile": "write"
+    "default_profile": "write",
   },
   "edit_predictions": {
     "mode": "subtle",
     "copilot": {
       "proxy": null,
-      "proxy_no_verify": null
+      "proxy_no_verify": null,
     },
-    "enabled_in_text_threads": false
+    "enabled_in_text_threads": false,
   },
   "icon_theme": "Catppuccin Mocha",
   "outline_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "zed",
   },
   "theme": "Ayu Dark",
   "lsp": {
@@ -56,16 +60,16 @@
       "initialization_options": {
         "checkOnSave": true,
         "rustfmt": {
-          "extraArgs": ["+nightly"]
+          "extraArgs": ["+nightly"],
         },
         "server": {
           "extraEnv": {
-            "RUSTUP_TOOLCHAIN": "nightly"
-          }
-        }
-      }
-    }
+            "RUSTUP_TOOLCHAIN": "nightly",
+          },
+        },
+      },
+    },
   },
   "ui_font_size": 16.0,
-  "extend_comment_on_newline": true
+  "extend_comment_on_newline": true,
 }

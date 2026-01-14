@@ -18,6 +18,31 @@ mine = "@ | ancestors(mine(), 5)"
 
 [aliases]
 tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+gpc = ["util", "exec", "--", "bash", "-c", """
+set -euo pipefail
+
+# Get the log of changes from trunk to current
+changes=$(jj log -r 'trunk()..@' --no-graph -T 'description ++ "\n"' 2>/dev/null | head -20)
+
+if [ -z "$changes" ]; then
+  echo "No changes between trunk and @"
+  exit 1
+fi
+
+# Use amp rush mode to generate a short bookmark name
+name=$(echo "$changes" | amp --mode rush -x "Generate a very short git branch name (2-4 words, lowercase, hyphen-separated) that summarizes these commit messages. Output ONLY the branch name, nothing else. No prefix, no quotes, no explanation.")
+
+if [ -z "$name" ]; then
+  echo "Failed to generate bookmark name"
+  exit 1
+fi
+
+bookmark="onbjerg/$name"
+echo "Creating bookmark: $bookmark"
+
+# Create and push atomically using --named
+jj git push --named "$bookmark=@" "$@"
+""", "--"]
 
 [fix.tools.rustfmt]
 command = ["rustfmt", "+nightly", "--emit", "stdout"]

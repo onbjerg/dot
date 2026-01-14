@@ -50,7 +50,7 @@ jj bookmark create onbjerg/feature-name
 When told to "push the changes", ALWAYS use:
 
 ```bash
-jj git push -c @
+jj gpc
 ```
 
 Only use a different command if explicitly instructed OR if the current change is part of a bookmark.

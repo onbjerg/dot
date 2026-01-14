@@ -2,3 +2,4 @@
 !docs/*.md
 !AGENTS.md
 !settings.json
+!skills/*.md
