@@ -2,7 +2,9 @@
 
 ## Version Control
 
-Use `jj` (Jujutsu) for all version control operations. Only fall back to `git` when there is no `jj` equivalent.
+ALWAYS use `jj` (Jujutsu) for all version control operations. Only fall back to `git` when there is no `jj` equivalent.
+
+Commit message headers (the first line) MUST ALWAYS be within 50 characters. The commit message body MUST ALWAYS be wrapped to 72 characters or less.
 
 ### Common jj commands
 
@@ -42,6 +44,16 @@ Always use the `onbjerg/` prefix when creating bookmarks:
 ```bash
 jj bookmark create onbjerg/feature-name
 ```
+
+### Pushing Changes
+
+When told to "push the changes", ALWAYS use:
+
+```bash
+jj git push -c @
+```
+
+Only use a different command if explicitly instructed OR if the current change is part of a bookmark.
 
 ## Communication Style
 
