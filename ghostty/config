@@ -42,5 +42,7 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 keybind = shift+enter=text:\n
+keybind = super+d=new_split:right
+keybind = super+shift+d=new_split:down
 font-family = "Berkeley Mono"
 theme = iTerm2 Tango Dark
