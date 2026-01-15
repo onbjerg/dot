@@ -1,11 +1,11 @@
 {
-  "allowedCommands": [
-    "cargo clippy*",
-    "cargo +nightly clippy*",
-    "cargo fmt*",
-    "jj diff",
-    "jj log",
-    "jj show",
-    "jj status"
+  "amp.permissions": [
+    { "tool": "Bash", "matches": { "cmd": "cargo*" }, "action": "allow" },
+    { "tool": "Bash", "matches": { "cmd": "cargo install*" }, "action": "ask" },
+    { "tool": "Bash", "matches": { "cmd": "jj rebase*" }, "action": "ask" },
+    { "tool": "Bash", "matches": { "cmd": "jj squash*" }, "action": "ask" },
+    { "tool": "Bash", "matches": { "cmd": "jj git*" }, "action": "ask" },
+    { "tool": "Bash", "matches": { "cmd": "jj gpc*" }, "action": "ask" },
+    { "tool": "Bash", "matches": { "cmd": "jj*" }, "action": "allow" }
   ]
 }
