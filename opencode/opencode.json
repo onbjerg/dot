@@ -1,0 +1,15 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "bash": {
+      "*": "allow",
+      "cargo *": "allow",
+      "cargo install *": "ask",
+      "jj *": "allow",
+      "jj rebase *": "ask",
+      "jj squash *": "ask",
+      "jj git *": "ask",
+      "jj gpc *": "ask"
+    }
+  }
+}

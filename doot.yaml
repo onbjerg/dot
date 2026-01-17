@@ -9,6 +9,9 @@ groups:
   amp:
     nux: "~/.config/amp"
     mac: "~/.config/amp"
+  opencode:
+    nux: "~/.config/opencode"
+    mac: "~/.config/opencode"
   fish:
     nux: "~/.config/fish"
     mac: "~/.config/fish"
