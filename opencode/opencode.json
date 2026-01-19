@@ -1,5 +1,12 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "ast-grep": {
+      "type": "local",
+      "command": ["uvx", "--from", "git+https://github.com/ast-grep/ast-grep-mcp", "ast-grep-server"],
+      "enabled": true
+    }
+  },
   "permission": {
     "bash": {
       "*": "allow",
