@@ -55,6 +55,27 @@ jj gpc
 
 Only use a different command if explicitly instructed OR if the current change is part of a bookmark.
 
+## tmux
+
+Use `tmux` to run interactive applications and development servers. Never run long-lived or interactive processes directly — always use a tmux session.
+
+```bash
+# Start a dev server in a named session
+tmux new-session -d -s dev 'npm run dev'
+
+# Run an interactive application
+tmux new-session -d -s app './my-app'
+
+# Check output
+tmux capture-pane -t dev -p
+
+# Send keys to a session
+tmux send-keys -t dev 'C-c' Enter
+
+# Kill a session
+tmux kill-session -t dev
+```
+
 ## Communication Style
 
 When describing changes, use code blocks with backticks:

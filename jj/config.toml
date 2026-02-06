@@ -4,7 +4,7 @@ email = "hi@notbjerg.me"
 
 [signing]
 behavior = "own"
-backend = "gpg"
+backend = "none"
 
 [revsets]
 'default()' = 'coalesce(trunk(),root())::present(@) | ancestors(visible_heads() & recent(), 5)'

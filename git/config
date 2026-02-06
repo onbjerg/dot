@@ -22,3 +22,5 @@
     conflictstyle = diff3
 [tag]
 	gpgsign = true
+[init]
+	defaultBranch = main
