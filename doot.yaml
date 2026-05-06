@@ -6,12 +6,9 @@ plans:
   all:
 
 groups:
-  amp:
-    nux: "~/.config/amp"
-    mac: "~/.config/amp"
-  opencode:
-    nux: "~/.config/opencode"
-    mac: "~/.config/opencode"
+  pi:
+    nux: "~/.pi/agent"
+    mac: "~/.pi/agent"
   fish:
     nux: "~/.config/fish"
     mac: "~/.config/fish"

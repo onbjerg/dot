@@ -7,6 +7,25 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    }
+  },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Colored Zed Icons Theme Light",
+    "dark": "Colored Zed Icons Theme Dark"
+  },
   "which_key": {
     "delay_ms": 1000,
     "enabled": true,
@@ -29,14 +48,14 @@
     "git_status": true,
   },
   "ui_font_family": ".ZedSans",
-  "buffer_font_family": "CommitMono",
+  "buffer_font_family": "Berkeley Mono",
   "vim_mode": true,
   "agent": {
+    "dock": "right",
     "default_model": {
       "provider": "anthropic",
       "model": "claude-opus-4-latest",
     },
-    "always_allow_tool_actions": true,
     "default_profile": "write",
   },
   "edit_predictions": {
@@ -47,14 +66,10 @@
     },
     "enabled_in_text_threads": false,
   },
-  "icon_theme": "Catppuccin Mocha",
   "outline_panel": {
     "dock": "right",
   },
-  "features": {
-    "edit_prediction_provider": "zed",
-  },
-  "theme": "Ayu Dark",
+  "theme": "Vercel Dark",
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
